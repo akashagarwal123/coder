@@ -1,11 +1,12 @@
-#include <stdio.h>
-#include <math.h>
-
-int main()
+import java.io.*;
+class Main
 {
+public static void main(String args[])throws IOException
+{
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int number, originalNumber, remainder, result = 0, n = 0 ;
 
-    scanf("%d", &number);
+    number = Integer.parseInt(br.readLine());
 
      originalNumber = number;
     
@@ -20,14 +21,13 @@ int main()
     while (originalNumber != 0)
     {
         remainder = originalNumber%10;
-        result += pow(remainder, n);
+        result += Math.pow(remainder, n);
         originalNumber /= 10;
     }
 
     if(result == number)
-        printf("yes");
+        System.out.println("yes");
     else
-        printf("no");
-
-    return 0;
+                System.out.println("no");
+}
 }
